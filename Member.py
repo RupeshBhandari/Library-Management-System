@@ -7,7 +7,6 @@ class Member:
        self.email = email
        self.phone = phone
        self.member_since = member_since
-       self.max_loans = 5
     
     def get_details(self) -> dict:
         return {

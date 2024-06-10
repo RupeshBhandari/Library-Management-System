@@ -9,6 +9,7 @@ class Library:
         self.members = []
         self.loans = []
         self.default_return_date = 7
+        self.max_loans = 5
         
     
     def add_book(self, book) -> str:
@@ -65,7 +66,7 @@ class Library:
             return f"The book is: {Book.status} at the moment"
         
          # Check if the member has reached the maximum loan limit
-        if len([loan for loan in self.loans if loan.member == member]) >= member.max_loans:
+        if len([loan for loan in self.loans if loan.member == member]) >= self.members:
             return f"{member.name} has reached the maximum loan limit"
         
         book.set_status(False)
